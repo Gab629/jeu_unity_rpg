@@ -874,6 +874,7 @@ GameObject:
   - component: {fileID: 993079091}
   - component: {fileID: 993079093}
   - component: {fileID: 993079092}
+  - component: {fileID: 993079094}
   m_Layer: 11
   m_Name: Tilemap_sol
   m_TagString: Untagged
@@ -1898,6 +1899,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &993079094
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993079090}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1053869182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,6 +2007,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1101886408}
   - component: {fileID: 1101886409}
+  - component: {fileID: 1101886410}
+  - component: {fileID: 1101886411}
+  - component: {fileID: 1101886412}
   m_Layer: 10
   m_Name: Knight
   m_TagString: Untagged
@@ -2005,7 +2025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101886407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.677, y: -3.66, z: 6.5159}
+  m_LocalPosition: {x: -5.677, y: -3.86, z: 6.5159}
   m_LocalScale: {x: 2.567988, y: 2.567988, z: 2.567988}
   m_Children:
   - {fileID: 906616962}
@@ -2033,6 +2053,55 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1101886410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101886407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54e2a645f0051d4984deb83bc3c9bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1101886411
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101886407}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &1101886412
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101886407}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.007857266, y: 0.27185833}
+  m_Size: {x: 0.22657038, y: 0.6699987}
+  m_Direction: 0
 --- !u!1 &1405251117
 GameObject:
   m_ObjectHideFlags: 0
