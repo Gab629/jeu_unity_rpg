@@ -13,6 +13,10 @@ public class Knight : MonoBehaviour
     private Rigidbody2D rb_knight;
     private Collider2D collider_knight;
 
+    private float scaleHero;
+    private int direction = 1;
+    private float mouvement = 0f;
+
 
 
     void Start()
@@ -21,6 +25,8 @@ public class Knight : MonoBehaviour
         rb_knight = GetComponent<Rigidbody2D>();
         collider_knight = GetComponent<Collider2D>();
 
+        scaleHero = transform.localScale.x;
+
     }
 
     
@@ -28,6 +34,7 @@ public class Knight : MonoBehaviour
     {
         Deplacement();
         Saute();
+        FlipKnight();
     }
 
     void Deplacement()
@@ -66,6 +73,17 @@ public class Knight : MonoBehaviour
             anim_knight.SetTrigger("Jump");
         }
 
+    }
+
+    void FlipKnight(){
+        mouvement = Input.GetAxis("Horizontal");
+        transform.localScale = new Vector2(scaleHero * direction, scaleHero);
+        if(mouvement > 0)
+        {
+            direction = 1;
+        }else if(mouvement < 0){
+            direction = -1;
+        }
     }
 
     
