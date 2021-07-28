@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 993079093}
   - component: {fileID: 993079092}
   - component: {fileID: 993079094}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Tilemap_sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2085,7 +2085,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1101886412
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

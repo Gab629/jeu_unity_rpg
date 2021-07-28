@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Knight : MonoBehaviour
 {
 
-    private float vitesseDeplacement = 3f;
+    public float vitesseDeplacement = 2f;
     private float vitesseSaut = 5f;
 
     private Animator anim_knight;
     private Rigidbody2D rb_knight;
     private Collider2D collider_knight;
-   
+
+
+
     void Start()
     {
         anim_knight = GetComponent<Animator>();
@@ -29,8 +32,22 @@ public class Knight : MonoBehaviour
 
     void Deplacement()
     {
-        float mouvementHorizontal = Input.GetAxis("Horizontal");
+        float mouvementHorizontal = Input.GetAxisRaw("Horizontal");
         rb_knight.velocity = new Vector2(mouvementHorizontal * vitesseDeplacement, rb_knight.velocity.y);
+
+        anim_knight.SetFloat("Walk", Mathf.Abs(mouvementHorizontal));
+
+        if (Input.GetKey("left shift"))
+        {
+            vitesseDeplacement = 5f;
+            anim_knight.SetBool("Run", true);
+
+        }else
+        {
+            vitesseDeplacement = 2f;
+            anim_knight.SetBool("Run", false);
+        }
+        
         
     }
 
@@ -44,10 +61,14 @@ public class Knight : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("je saute");
             rb_knight.velocity = new Vector2(0, vitesseSaut);
+            anim_knight.SetTrigger("Jump");
         }
 
     }
+
+    
 
 
 
