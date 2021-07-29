@@ -61,6 +61,7 @@ public class Knight : MonoBehaviour
     void Saute()
     {
         int quelLayer = LayerMask.GetMask("Sol");
+        
         if (!collider_knight.IsTouchingLayers(quelLayer))
         {
             return;
@@ -87,7 +88,7 @@ public class Knight : MonoBehaviour
     }
 
     
-
+    
 
 
 
