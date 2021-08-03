@@ -13,10 +13,10 @@ public class background : MonoBehaviour
     {
         startpos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
-
     }
 
-    
+
+
     void FixedUpdate()
     {
         float temp = (cam.transform.position.x * (1 - parallaxEffect));
@@ -30,5 +30,6 @@ public class background : MonoBehaviour
         {
             startpos -= length;
         }
+
     }
 }

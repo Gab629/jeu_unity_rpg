@@ -69,7 +69,6 @@ public class Knight : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("je saute");
             rb_knight.velocity = new Vector2(0, vitesseSaut);
             anim_knight.SetTrigger("Jump");
         }
