@@ -12,6 +12,8 @@ public class Knight : MonoBehaviour
     private Animator anim_knight;
     private Rigidbody2D rb_knight;
     private Collider2D collider_knight;
+    private BoxCollider colliderGum;
+
 
     private float scaleHero;
     private int direction = 1;
@@ -19,9 +21,10 @@ public class Knight : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-
+    
     public healthbar healthBar;
 
+    public GameObject gumgum;
     void Start()
     {
         anim_knight = GetComponent<Animator>();
@@ -32,6 +35,9 @@ public class Knight : MonoBehaviour
 
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+
+        colliderGum = gumgum.GetComponent<BoxCollider>();
     }
 
     
@@ -49,6 +55,15 @@ public class Knight : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+    }
+
+    private void OnTriggerEnter2D(Collider2D chose)
+    {
+        if(chose.transform.tag == "gum")
+        {
+            TakeDamage(20);
+            Debug.Log("djsakdaskndaskndknasd");
+        }
     }
     void Deplacement()
     {
