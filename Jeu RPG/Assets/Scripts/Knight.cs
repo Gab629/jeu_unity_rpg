@@ -17,7 +17,10 @@ public class Knight : MonoBehaviour
     private int direction = 1;
     private float mouvement = 0f;
 
+    public int maxHealth = 100;
+    public int currentHealth;
 
+    public healthbar healthBar;
 
     void Start()
     {
@@ -27,16 +30,26 @@ public class Knight : MonoBehaviour
 
         scaleHero = transform.localScale.x;
 
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
         Deplacement();
         Saute();
         FlipKnight();
     }
-
+     void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
     void Deplacement()
     {
         float mouvementHorizontal = Input.GetAxisRaw("Horizontal");
