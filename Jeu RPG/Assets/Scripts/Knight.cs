@@ -62,7 +62,6 @@ public class Knight : MonoBehaviour
         if(chose.transform.tag == "gum")
         {
             TakeDamage(20);
-            Debug.Log("djsakdaskndaskndknasd");
         }
     }
     void Deplacement()
